@@ -1,0 +1,46 @@
+<?php
+
+namespace Nutricion\EmpresasBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PermisosUsuario
+ *
+ * @ORM\Table(name="permisos_usuario", uniqueConstraints={@ORM\UniqueConstraint(name="usuario", columns={"usuario", "permiso"})})
+ * @ORM\Entity
+ */
+class PermisosUsuario
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="usuario", type="integer", nullable=false)
+     */
+    private $usuario;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="permiso", type="integer", nullable=false)
+     */
+    private $permiso;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="valor", type="boolean", nullable=false)
+     */
+    private $valor;
+
+
+}

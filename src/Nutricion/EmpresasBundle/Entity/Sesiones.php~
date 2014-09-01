@@ -1,0 +1,158 @@
+<?php
+
+namespace Nutricion\EmpresasBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Sesiones
+ *
+ * @ORM\Table(name="sesiones")
+ * @ORM\Entity
+ */
+class Sesiones
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_perfil", type="integer", nullable=false)
+     */
+    private $idPerfil;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="peso", type="integer", nullable=false)
+     */
+    private $peso;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cintura", type="integer", nullable=false)
+     */
+    private $cintura;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="porcentaje_grasa", type="integer", nullable=false)
+     */
+    private $porcentajeGrasa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ausentismo", type="integer", nullable=false)
+     */
+    private $ausentismo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cuantas_veces", type="integer", nullable=false)
+     */
+    private $cuantasVeces;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="explique_ausentismo", type="text", nullable=false)
+     */
+    private $expliqueAusentismo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="accidentes_laborales", type="integer", nullable=false)
+     */
+    private $accidentesLaborales;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="explique_accidentes", type="text", nullable=false)
+     */
+    private $expliqueAccidentes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="satisfaccion_laboral", type="integer", nullable=false)
+     */
+    private $satisfaccionLaboral;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indice_de_masa", type="integer", nullable=false)
+     */
+    private $indiceDeMasa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="horas_sueno", type="integer", nullable=false)
+     */
+    private $horasSueno;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cafe", type="integer", nullable=false)
+     */
+    private $cafe;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="azucar", type="integer", nullable=false)
+     */
+    private $azucar;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="refrescos", type="integer", nullable=false)
+     */
+    private $refrescos;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tipo_lacteo", type="integer", nullable=false)
+     */
+    private $tipoLacteo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cantidad_lacteo", type="integer", nullable=false)
+     */
+    private $cantidadLacteo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comentarios", type="text", nullable=false)
+     */
+    private $comentarios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fecha_creacion", type="string", length=20, nullable=false)
+     */
+    private $fechaCreacion;
+
+
+}

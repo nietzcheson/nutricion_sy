@@ -1,0 +1,7 @@
+parameters:
+#    nutricion_test.example.class: Nutricion\TestBundle\Example
+
+services:
+#    nutricion_test.example:
+#        class: %nutricion_test.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

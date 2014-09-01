@@ -1,0 +1,23 @@
+nutricion_empresas:
+    path:     /empresas
+    defaults: { _controller: NutricionEmpresasBundle:Default:empresas }
+
+nutricion_crear_empresa:
+    path:     /crear-empresa
+    defaults: { _controller: NutricionEmpresasBundle:Default:crearEmpresa }
+
+nutricion_perfil_empresa:
+    path:     /perfil-empresa/{id}
+    defaults: { _controller: NutricionEmpresasBundle:Default:index }
+
+nutricion_producto:
+    path:     /producto/{id}
+    defaults: { _controller: NutricionEmpresasBundle:Default:producto }
+
+nutricion_productos:
+    path:     /productos
+    defaults: { _controller: NutricionEmpresasBundle:Default:productos }
+
+crear:
+  path:  /crear
+  defaults: {_controller: NutricionEmpresasBundle:Default:crear}

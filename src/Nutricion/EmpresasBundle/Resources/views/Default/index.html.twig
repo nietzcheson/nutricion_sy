@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+
+{% block contenido %}
+	{% for producto in productos %}
+		<p>{{ producto.nombre }}</p>
+	{% endfor %}
+{% endblock %}

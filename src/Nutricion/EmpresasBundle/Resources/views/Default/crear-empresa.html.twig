@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block contenido %}
+{{ parent() }}
+{{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal','role':'form'}}) }}
+	<div class="form-group">
+		{{ form_label(form.empresa, '', {'label_attr':{'class':'col-sm-2 control-label'}}) }}
+
+		<div class="col-sm-10">
+			<label class="list-errors">{{ form_errors(form.empresa)}}</label>
+			{{ form_widget(form.empresa, {'attr': {'class':'form-control input-lg', 'placeholder': 'Empresa'}} ) }}
+		</div>
+	</div>
+	<div class="form-group">
+		{{ form_label(form.email, '', {'label_attr':{'class':'col-sm-2 control-label'}}) }}
+		<div class="col-sm-10">
+			<label class="list-errors">{{ form_errors(form.email)}}</label>
+			{{ form_widget(form.email, {'attr': {'class':'form-control input-lg', 'placeholder':'Email'}} ) }}
+		</div>
+	</div>
+	<div class="form-group">
+		{{ form_label(form.telefono, '', {'label_attr':{'class':'col-sm-2 control-label'}}) }}
+		<div class="col-sm-10">
+			<label class="list-errors">{{ form_errors(form.telefono)}}</label>
+			{{ form_widget(form.telefono, {'attr': {'class':'form-control input-lg', 'placeholder':'Teléfono'}} ) }}
+		</div>
+	</div>
+	<div class="form-group">
+		{{ form_label(form.direccion, '', {'label_attr':{'class':'col-sm-2 control-label'}}) }}
+		<div class="col-sm-10">
+			<label class="list-errors">{{ form_errors(form.direccion)}}</label>
+			{{ form_widget(form.direccion, {'attr': {'class':'form-control input-lg', 'placeholder':'Dirección'}} ) }}
+		</div>
+	</div>
+	<div class="form-group">
+		{{ form_label(form.observaciones, '', {'label_attr':{'class':'col-sm-2 control-label'}}) }}
+		<div class="col-sm-10">
+			<label class="list-errors">{{ form_errors(form.observaciones)}}</label>
+			{{ form_widget(form.observaciones, {'attr': {'class':'form-control input-lg', 'placeholder':'Observaciones', 'rows':'8','cols':'40'}} ) }}
+		</div>
+	</div>
+{{ form_end(form)}}
+
+{% endblock %}

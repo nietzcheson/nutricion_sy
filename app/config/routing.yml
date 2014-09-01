@@ -1,0 +1,8 @@
+nutricion_test:
+    resource: "@NutricionTestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+nutricion_empresas:
+    resource: "@NutricionEmpresasBundle/Resources/config/routing.yml"
+    prefix:   /
+

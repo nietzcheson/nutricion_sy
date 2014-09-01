@@ -1,0 +1,67 @@
+<?php
+
+namespace Nutricion\EmpresasBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Empresas
+ *
+ * @ORM\Table(name="empresas")
+ * @ORM\Entity
+ */
+class Empresas
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="empresa", type="string", length=255, nullable=false)
+     */
+    private $empresa;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=255, nullable=false)
+     */
+    private $telefono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="string", length=255, nullable=false)
+     */
+    private $direccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observaciones", type="text", nullable=false)
+     */
+    private $observaciones;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fecha_creacion", type="string", length=20, nullable=false)
+     */
+    private $fechaCreacion;
+
+
+}

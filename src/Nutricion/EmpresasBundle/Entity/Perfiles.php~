@@ -1,0 +1,137 @@
+<?php
+
+namespace Nutricion\EmpresasBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Perfiles
+ *
+ * @ORM\Table(name="perfiles")
+ * @ORM\Entity
+ */
+class Perfiles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_tipoperfil", type="integer", nullable=false)
+     */
+    private $idTipoperfil;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_empresa", type="integer", nullable=false)
+     */
+    private $idEmpresa;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombres", type="string", length=200, nullable=false)
+     */
+    private $nombres;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellidos", type="string", length=200, nullable=false)
+     */
+    private $apellidos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="direccion", type="string", length=200, nullable=false)
+     */
+    private $direccion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=200, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="frecuenciaEmail", type="string", length=200, nullable=false)
+     */
+    private $frecuenciaemail;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="telefono_trabajo", type="integer", nullable=false)
+     */
+    private $telefonoTrabajo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="telefono_casa", type="integer", nullable=false)
+     */
+    private $telefonoCasa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="telefono_celular", type="integer", nullable=false)
+     */
+    private $telefonoCelular;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="edad", type="integer", nullable=false)
+     */
+    private $edad;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="estatura_metros", type="integer", nullable=false)
+     */
+    private $estaturaMetros;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="estatura_centimetros", type="integer", nullable=false)
+     */
+    private $estaturaCentimetros;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fecha_nacimiento", type="string", length=20, nullable=false)
+     */
+    private $fechaNacimiento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lugar_nacimiento", type="string", length=200, nullable=false)
+     */
+    private $lugarNacimiento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fecha_creacion", type="string", length=20, nullable=false)
+     */
+    private $fechaCreacion;
+
+
+}
