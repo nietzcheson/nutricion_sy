@@ -24,6 +24,7 @@ body{
   font-size: 1.4em;
 }
 
+#_errores ul li {list-style:none}
 
 #contenido{
   width: 100%;

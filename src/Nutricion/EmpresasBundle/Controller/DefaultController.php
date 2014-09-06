@@ -72,16 +72,17 @@ class DefaultController extends Controller
       $form->handleRequest($request);
 
       $clickForm = $form->get("Crear empresa")->isClicked();
-
+      $errores = "";
       if($clickForm){
+
         $validador = $this->get("validator");
         $errores = $validador->validate($empresa);
 
-        $erroresString = 0;
         if(count($errores) > 0){
           $erroresString = (string) $errores;
         }
       }
+
 
       if($form->isValid()){
         $em = $this->getDoctrine()->getManager();
@@ -97,7 +98,77 @@ class DefaultController extends Controller
             "title" => "Regresar",
             "href" => $this->generateUrl("nutricion_empresas")
           ),
-          "form"=>$form->createView()
+          "form"=>$form->createView(),
+          "_errores" => $errores
+        ));
+    }
+
+    public function empresaAction($id, Request $request)
+    {
+      $empresa = $this->getDoctrine()
+      ->getRepository("NutricionEmpresasBundle:Empresas")
+      ->find($id);
+
+      if(!$empresa){
+        throw $this->createNotFoundException("Parece que lo que buscas no se encuentra");
+      }
+
+      $formEmpresa = new Entity\Empresas();
+      $formEmpresa->setEmpresa($empresa->getEmpresa());
+      $formEmpresa->setEmail($empresa->getEmail());
+      $formEmpresa->setTelefono($empresa->getTelefono());
+      $formEmpresa->setDireccion($empresa->getDireccion());
+      $formEmpresa->setObservaciones($empresa->getObservaciones());
+
+      $form = $this->createFormBuilder($formEmpresa)
+      ->add("empresa","text")
+      ->add("email","text")
+      ->add("telefono","text")
+      ->add("direccion",'text')
+      ->add("observaciones",'textarea')
+      ->add("Guardar","submit", array(
+        'attr'=>array(
+          'class'=>'btn btn-success btn-lg'
+        )
+      ))
+      ->getForm();
+
+      $form->handleRequest($request);
+
+      $clickForm = $form->get("Guardar")->isClicked();
+      $errores = "";
+      if($clickForm){
+
+        $validador = $this->get("validator");
+        $errores = $validador->validate($empresa);
+
+        if(count($errores) > 0){
+          $erroresString = (string) $errores;
+        }
+      }
+
+      if($form->isValid()){
+        $em = $this->getDoctrine()->getManager();
+        $empresa->setEmpresa($formEmpresa->getEmpresa());
+        $empresa->setEmail($formEmpresa->getEmail());
+        $empresa->setTelefono($formEmpresa->getTelefono());
+        $empresa->setDireccion($formEmpresa->getDireccion());
+        $empresa->setObservaciones($formEmpresa->getObservaciones());
+
+        $em->flush();
+        return $this->redirect($this->generateUrl('nutricion_perfil_empresa',array("id"=>$empresa->getId())));
+      }
+
+
+      return $this->render("NutricionEmpresasBundle:Default:empresa.html.twig",
+        array(
+          "titulo"=>$empresa->getEmpresa(),
+          "btn_header" => array(
+            "title" => "Regresar",
+            "href" => $this->generateUrl("nutricion_empresas")
+          ),
+          "form"=>$form->createView(),
+          "_errores" => $errores,
         ));
     }
 

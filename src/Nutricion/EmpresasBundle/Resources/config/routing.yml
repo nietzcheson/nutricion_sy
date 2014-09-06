@@ -8,7 +8,7 @@ nutricion_crear_empresa:
 
 nutricion_perfil_empresa:
     path:     /perfil-empresa/{id}
-    defaults: { _controller: NutricionEmpresasBundle:Default:index }
+    defaults: { _controller: NutricionEmpresasBundle:Default:empresa }
 
 nutricion_producto:
     path:     /producto/{id}

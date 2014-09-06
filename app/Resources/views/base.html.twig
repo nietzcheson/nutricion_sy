@@ -38,13 +38,40 @@
             <div class="panel panel-default" id="contenido">
               <div class="panel-body">
         {% block contenido %}
+        {% if _errores is defined %}
+          {% if _errores!="" %}
+            <div class="alert alert-warning fade in" role="alert" id="_errores">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <ul>
+                {% for error in _errores %}
+                <li><strong>{{ error.message }}</strong></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+        {% endif %}
+
+        {% if _mensajes is defined %}
+          {% if _mensajes!="" %}
+            <div class="alert alert-info fade in" role="alert" id="_errores">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <ul>
+                {% for mensaje in _mensajes %}
+                <li><strong>{{ mensaje.message }}</strong></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+        {% endif %}
+        {% if btn_header is defined %}
+          <div class="col-md-12 text-right">
+            <a href="{{ btn_header.href }}" class="btn btn-default">{{ btn_header.title }}</a>
+          </div>
+        {% endif %}
         <div class="page-header">
-          <h1>{{ titulo }}
-            <small>
-              {% if btn_header is defined %}
-              <a href="{{ btn_header.href }}" class="btn btn-default">{{ btn_header.title }}</a>
-              {% endif %}
-          </small>
+          <h1>{% if titulo is defined %}{{ titulo }}{% endif %}
         </h1>
         </div>
 

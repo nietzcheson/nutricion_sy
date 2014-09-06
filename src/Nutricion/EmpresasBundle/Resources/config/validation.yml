@@ -1,12 +1,12 @@
 Nutricion\EmpresasBundle\Entity\Empresas:
   properties:
    empresa:
-    - NotBlank: { message: 'No puede quedar vacío' }
+    - NotBlank: { message: 'Empresa no puede quedar vacío' }
    email:
-    - NotBlank: { message: 'No puede quedar vacío' }
+    - NotBlank: { message: 'El Email es obligatorio' }
    telefono:
-    - NotBlank: { message: 'No puede quedar vacío' }
+    - NotBlank: { message: 'El Teléfono es importante' }
    direccion:
-    - NotBlank: { message: 'No puede quedar vacío' }
+    - NotBlank: { message: 'La Dirección no puede quedar vacía' }
    observaciones:
-    - NotBlank: { message: 'Es obligatorio' }
+    - NotBlank: { message: 'Las Observaciones son obligatorias' }
