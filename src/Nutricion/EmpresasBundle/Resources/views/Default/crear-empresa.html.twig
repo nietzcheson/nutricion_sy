@@ -2,6 +2,7 @@
 
 {% block contenido %}
 {{ parent() }}
+
 {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal','role':'form'}}) }}
 	<div class="form-group">
 		{{ form_label(form.empresa, '', {'label_attr':{'class':'col-sm-2 control-label'}}) }}

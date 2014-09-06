@@ -24,7 +24,25 @@ class DefaultController extends Controller
 
     public function empresasAction()
     {
-      return $this->render("NutricionEmpresasBundle:Default:empresas.html.twig");
+      $empresas = $this->getDoctrine()
+      ->getRepository("NutricionEmpresasBundle:Empresas")
+      ->findAll();
+
+      if(!$empresas){
+        echo "No hay empresas";
+        exit();
+      }
+
+
+      return $this->render("NutricionEmpresasBundle:Default:empresas.html.twig",
+      array(
+        "titulo"=>"Empresas",
+        "btn_header" => array(
+          "title" => "Crear empresa",
+          "href" => $this->generateUrl("nutricion_crear_empresa")
+        ),
+        "empresas"=>$empresas
+      ));
     }
 
     public function crearEmpresaAction(Request $request)
@@ -35,7 +53,7 @@ class DefaultController extends Controller
       $empresa->setTelefono("");
       $empresa->setDireccion("");
       $empresa->setObservaciones("");
-      $empresa->setFechaCreacion("d/M/A");
+      $empresa->setFechaCreacion("");
 
       $form = $this->createFormBuilder($empresa)
       ->add("empresa","text")
@@ -75,6 +93,10 @@ class DefaultController extends Controller
       return $this->render("NutricionEmpresasBundle:Default:crear-empresa.html.twig",
         array(
           "titulo"=>"Crear Empresa",
+          "btn_header" => array(
+            "title" => "Regresar",
+            "href" => $this->generateUrl("nutricion_empresas")
+          ),
           "form"=>$form->createView()
         ));
     }
