@@ -84,7 +84,6 @@ body{
     width: 69em;
     margin: auto;
     //background: #aaa;
-    border-right: 1px solid #dedede;
     padding: 0px;
   }
 
@@ -102,6 +101,7 @@ body{
     left: 17em;
     position: relative;
     padding: 10px;
-    background: #eee;
+    padding-top:30px;
+    border-right: 1px solid #dedede;
   }
 }

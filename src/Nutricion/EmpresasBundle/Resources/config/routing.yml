@@ -10,14 +10,10 @@ nutricion_perfil_empresa:
     path:     /perfil-empresa/{id}
     defaults: { _controller: NutricionEmpresasBundle:Default:empresa }
 
-nutricion_producto:
-    path:     /producto/{id}
-    defaults: { _controller: NutricionEmpresasBundle:Default:producto }
+nutricion_perfiles:
+    path:     /perfiles
+    defaults: { _controller: NutricionEmpresasBundle:Default:perfiles }
 
-nutricion_productos:
-    path:     /productos
-    defaults: { _controller: NutricionEmpresasBundle:Default:productos }
-
-crear:
-  path:  /crear
-  defaults: {_controller: NutricionEmpresasBundle:Default:crear}
+nutricion_crear_perfil:
+    path:     /crear-perfil
+    defaults: { _controller: NutricionEmpresasBundle:Default:crearPerfil }

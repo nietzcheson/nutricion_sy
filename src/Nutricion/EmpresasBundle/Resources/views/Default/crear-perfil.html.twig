@@ -1,0 +1,71 @@
+{% extends '::base.html.twig' %}
+
+{% block contenido %}
+{{ parent() }}
+
+<div class="alert alert-warning">
+Los campos marcados con * (asterisco) son obligatorios
+</div>
+	{{ form_start(form, {'attr': {'novalidate': 'novalidate','role':'form'}}) }}
+		<div class="form-group">
+	    {{ form_label(form.id_tipoperfil) }}
+			{{ form_widget(form.id_tipoperfil, {'attr': {'class':'form-control input-lg'}} ) }}
+	  </div>
+		<div class="form-group">
+			{{ form_label(form.id_empresa) }}
+			{{ form_widget(form.id_empresa, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group col-md-6">
+			{{ form_label(form.nombres) }}
+			{{ form_widget(form.nombres, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group col-md-6">
+			{{ form_label(form.apellidos) }}
+			{{ form_widget(form.apellidos, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.direccion) }}
+			{{ form_widget(form.direccion, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group col-md-6">
+			{{ form_label(form.email) }}
+			{{ form_widget(form.email, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group col-md-6">
+			{{ form_label(form.frecuencia_email) }}
+			{{ form_widget(form.frecuencia_email, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group col-md-4">
+			{{ form_label(form.telefono_trabajo) }}
+			{{ form_widget(form.telefono_trabajo, {'attr': {'class':'form-control input-lg','placeholder':'Teléfono del trabajo'}} ) }}
+		</div>
+		<div class="form-group col-md-4">
+			{{ form_label(form.telefono_casa) }}
+			{{ form_widget(form.telefono_casa, {'attr': {'class':'form-control input-lg','placeholder':'Teléfono de la casa'}} ) }}
+		</div>
+		<div class="form-group col-md-4">
+			{{ form_label(form.telefono_celular) }}
+			{{ form_widget(form.telefono_celular, {'attr': {'class':'form-control input-lg','placeholder':'Teléfono celular'}} ) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.edad) }}
+			{{ form_widget(form.edad, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.estatura_metros) }}
+			{{ form_widget(form.estatura_metros, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.estatura_centimetros) }}
+			{{ form_widget(form.estatura_centimetros, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.fecha_nacimiento) }}
+			{{ form_widget(form.fecha_nacimiento, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.lugar_nacimiento) }}
+			{{ form_widget(form.lugar_nacimiento, {'attr': {'class':'form-control input-lg'}} ) }}
+		</div>
+	{{ form_end(form)}}
+{% endblock contenido %}
