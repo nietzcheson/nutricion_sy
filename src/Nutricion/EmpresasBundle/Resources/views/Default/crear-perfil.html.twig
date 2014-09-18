@@ -47,23 +47,23 @@ Los campos marcados con * (asterisco) son obligatorios
 			{{ form_label(form.telefono_celular) }}
 			{{ form_widget(form.telefono_celular, {'attr': {'class':'form-control input-lg','placeholder':'Teléfono celular'}} ) }}
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-4">
 			{{ form_label(form.edad) }}
 			{{ form_widget(form.edad, {'attr': {'class':'form-control input-lg'}} ) }}
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-4">
 			{{ form_label(form.estatura_metros) }}
 			{{ form_widget(form.estatura_metros, {'attr': {'class':'form-control input-lg'}} ) }}
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-4">
 			{{ form_label(form.estatura_centimetros) }}
 			{{ form_widget(form.estatura_centimetros, {'attr': {'class':'form-control input-lg'}} ) }}
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-6">
 			{{ form_label(form.fecha_nacimiento) }}
-			{{ form_widget(form.fecha_nacimiento, {'attr': {'class':'form-control input-lg'}} ) }}
+			{{ form_widget(form.fecha_nacimiento, {'attr': {'class':'form-control input-lg datepicker'}} ) }}
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-6">
 			{{ form_label(form.lugar_nacimiento) }}
 			{{ form_widget(form.lugar_nacimiento, {'attr': {'class':'form-control input-lg'}} ) }}
 		</div>

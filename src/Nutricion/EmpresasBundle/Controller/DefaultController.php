@@ -184,10 +184,36 @@ class DefaultController extends Controller
           ));
     }
 
-    public function crearPerfilAction()
+    public function crearPerfilAction(Request $request)
     {
       $perfil = new Entity\Perfiles();
-      $perfil->setIdTipoperfil("");
+      $perfil->setIdTipoPerfil("");
+      $perfil->setIdEmpresa("");
+      $perfil->setNombres("");
+      $perfil->setApellidos("");
+      $perfil->setDireccion("");
+      $perfil->setEmail("");
+      $perfil->setFrecuenciaEmail("");
+      $perfil->setTelefonoTrabajo("");
+      $perfil->setTelefonoCasa("");
+      $perfil->setTelefonoCelular("");
+      $perfil->setEdad("");
+      $perfil->setEstaturaMetros("");
+      $perfil->setEstaturaCentimetros("");
+      $perfil->setFechaNacimiento("");
+      $perfil->setLugarNacimiento("");
+      $perfil->setFechaCreacion("");
+
+
+
+      $numeros = function($max, $text = false)
+      {
+        $numeros = array();
+        for($i=0;$i<$max;$i++){
+          $numeros[($i+1)] = ($i+1) ." ".$text;
+        }
+        return $numeros;
+      };
 
       $form = $this->createFormBuilder($perfil)
       ->add("id_tipoperfil","entity",array(
@@ -215,8 +241,8 @@ class DefaultController extends Controller
       ->add('frecuencia_email','entity', array(
         'class' => 'NutricionEmpresasBundle:Frecuencias',
         'query_builder' => function(EntityRepository $er){
-            return $er->createQueryBuilder('f')->orderBy('f.id','ASC');
-          },
+          return $er->createQueryBuilder('f')->orderBy('f.id','ASC');
+        },
         'property' => 'frecuencia',
         'empty_value' => 'Seleccione el tipo de frecuencia',
         'label' => '¿Cada cuánto revisa su correo electrónico?',
@@ -224,12 +250,56 @@ class DefaultController extends Controller
       ->add('telefono_trabajo','text',array('label'=>'Teléfono del trabajo'))
       ->add('telefono_casa','text',array('label'=>'Teléfono de la casa'))
       ->add('telefono_celular','text')
-      ->add('edad','text')
-      ->add('estatura_metros','text')
-      ->add('estatura_centimetros','text')
-      ->add('fecha_nacimiento','text')
+      ->add('edad','choice',array(
+        'choices' => $numeros(100,'Años'),
+        'empty_value' => 'Seleccione',
+        'label' => 'Edad'
+      ))
+      ->add('estatura_metros','choice',array(
+        'choices' => $numeros(2,'Metro(s)'),
+        'empty_value'=> 'Seleccione',
+        'label' => "Estatura (metros)"
+      ))
+      ->add('estatura_centimetros','choice',array(
+        'choices' => $numeros(100,'Centimetro(s)'),
+        'empty_value'=> 'Seleccione',
+        'label' => "Estatura (centímetros)"
+      ))
+      ->add('fecha_nacimiento','text',array(
+        'attr'=> array(
+          'id'=> 'datepicker'
+        )
+      ))
       ->add('lugar_nacimiento','text')
+      ->add("Crear","submit", array(
+        'attr'=>array(
+          'class'=>'btn btn-success btn-lg'
+        )
+      ))
       ->getForm();
+
+      $form->handleRequest($request);
+
+      $clickForm = $form->get("Crear")->isClicked();
+      $errores = "";
+      if($clickForm){
+
+        $validador = $this->get("validator");
+        $errores = $validador->validate($perfil);
+
+        if(count($errores) > 0){
+          $erroresString = (string) $errores;
+        }
+      }
+
+      if($form->isValid()){
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($perfil);
+        $em->flush();
+        return $this->redirect($this->generateUrl('nutricion_crear_perfil'));
+      }
+
+
 
       return $this->render("NutricionEmpresasBundle:Default:crear-perfil.html.twig",
         array(
@@ -239,6 +309,7 @@ class DefaultController extends Controller
             "href" => $this->generateUrl("nutricion_perfiles")
           ),
           "form"=>$form->createView(),
+          "_errores" => $errores
         ));
     }
 

@@ -1,40 +1,39 @@
 $(document).ready(function(){
 
-	//alert("Listo");
+$(function() {
 
-	$(".close").click(function(){
-		$(".alert").fadeOut(200);
+	$( ".datepicker" ).datepicker({
+			changeMonth: true,
+				changeYear: true,
+				dateFormat: 'dd/mm/yy',
+				yearRange: '1910:2025'
 	});
+	
+	//Array para dar formato en español
+	$.datepicker.regional['es'] =
+	{
+		closeText: 'Cerrar',
+		prevText: 'Previo',
+		nextText: 'Próximo',
 
-	/*$(".nav-p").click(function(){
-		$('.submenu').fadeIn(300);
-	});*/
+		monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+		'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+		monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+		'Jul','Ago','Sep','Oct','Nov','Dic'],
+		monthStatus: 'Ver otro mes', yearStatus: 'Ver otro año',
+		dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+		dayNamesShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sáb'],
+		dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sa'],
+		dateFormat: 'dd/mm/yy', firstDay: 0,
+		initStatus: 'Selecciona la fecha', isRTL: false
+	};
 
-    $("button[id^='eliminar_']").click(function() {
-        if (confirm("Seguro que desea eliminar"))
-        {
+	$.datepicker.setDefaults($.datepicker.regional['es']);
 
-        }
-        else
-        {
-            event.preventDefault();
-        };
-    });
-
-
-    $(function() {
-    	$( ".datepicker" ).datepicker();
-  	});
-
-    $("div[id^='tabs_'] a").click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-  $(function () {
-    $('#myTab a:last').tab('show')
-  });
+	//miDate: fecha de comienzo D=días | M=mes | Y=año
+	//maxDate: fecha tope D=días | M=mes | Y=año
+		$( ".datepicker" ).datepicker({ minDate: "-1D", maxDate: "+1M +10D" });
+});
 
 
 });

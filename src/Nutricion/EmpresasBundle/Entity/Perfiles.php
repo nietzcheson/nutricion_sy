@@ -138,7 +138,7 @@ class Perfiles
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -161,7 +161,7 @@ class Perfiles
     /**
      * Get idTipoperfil
      *
-     * @return integer 
+     * @return integer
      */
     public function getIdTipoperfil()
     {
@@ -184,7 +184,7 @@ class Perfiles
     /**
      * Get idEmpresa
      *
-     * @return integer 
+     * @return integer
      */
     public function getIdEmpresa()
     {
@@ -207,7 +207,7 @@ class Perfiles
     /**
      * Get nombres
      *
-     * @return string 
+     * @return string
      */
     public function getNombres()
     {
@@ -230,7 +230,7 @@ class Perfiles
     /**
      * Get apellidos
      *
-     * @return string 
+     * @return string
      */
     public function getApellidos()
     {
@@ -253,7 +253,7 @@ class Perfiles
     /**
      * Get direccion
      *
-     * @return string 
+     * @return string
      */
     public function getDireccion()
     {
@@ -276,7 +276,7 @@ class Perfiles
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -299,7 +299,7 @@ class Perfiles
     /**
      * Get frecuenciaemail
      *
-     * @return string 
+     * @return string
      */
     public function getFrecuenciaemail()
     {
@@ -322,7 +322,7 @@ class Perfiles
     /**
      * Get telefonoTrabajo
      *
-     * @return integer 
+     * @return integer
      */
     public function getTelefonoTrabajo()
     {
@@ -345,7 +345,7 @@ class Perfiles
     /**
      * Get telefonoCasa
      *
-     * @return integer 
+     * @return integer
      */
     public function getTelefonoCasa()
     {
@@ -368,7 +368,7 @@ class Perfiles
     /**
      * Get telefonoCelular
      *
-     * @return integer 
+     * @return integer
      */
     public function getTelefonoCelular()
     {
@@ -391,7 +391,7 @@ class Perfiles
     /**
      * Get edad
      *
-     * @return integer 
+     * @return integer
      */
     public function getEdad()
     {
@@ -414,7 +414,7 @@ class Perfiles
     /**
      * Get estaturaMetros
      *
-     * @return integer 
+     * @return integer
      */
     public function getEstaturaMetros()
     {
@@ -437,7 +437,7 @@ class Perfiles
     /**
      * Get estaturaCentimetros
      *
-     * @return integer 
+     * @return integer
      */
     public function getEstaturaCentimetros()
     {
@@ -460,7 +460,7 @@ class Perfiles
     /**
      * Get fechaNacimiento
      *
-     * @return string 
+     * @return string
      */
     public function getFechaNacimiento()
     {
@@ -483,7 +483,7 @@ class Perfiles
     /**
      * Get lugarNacimiento
      *
-     * @return string 
+     * @return string
      */
     public function getLugarNacimiento()
     {
@@ -506,7 +506,7 @@ class Perfiles
     /**
      * Get fechaCreacion
      *
-     * @return string 
+     * @return string
      */
     public function getFechaCreacion()
     {

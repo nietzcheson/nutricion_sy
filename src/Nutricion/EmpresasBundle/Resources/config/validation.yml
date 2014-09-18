@@ -10,3 +10,10 @@ Nutricion\EmpresasBundle\Entity\Empresas:
     - NotBlank: { message: 'La Dirección no puede quedar vacía' }
    observaciones:
     - NotBlank: { message: 'Las Observaciones son obligatorias' }
+
+# Nutricion\EmpresasBundle\Entity\Perfiles:
+#   properties:
+#    nombres:
+#     - NotBlank: { message: 'El nombre no puede quedar vacío' }
+#    apellidos:
+#     - NotBlank: { message: 'El Email es obligatorio' }
